@@ -1,4 +1,4 @@
-# OfLocSetu (Offline Location Setu)
+# OffLocSetu (Offline Location Setu)
 
 ## Project Idea: **Offline (no internet & gps) Location System** ( _Concept Proposal_ )
 
