@@ -428,11 +428,19 @@ If one day this idea becomes a working prototype,
 it will be built on this foundation - carefully, responsibly, and transparently.
 
 ---
+
+## FAQ - Frequently Ask Questions
+
+Frequently asked questions and clarifications are documented in the FAQ:
+
+https://webdevpraveen.github.io/OffLocSetu/FAQ.html
+
+---
 ### License
 
 This project is currently shared as a concept and documentation only.
 
-All rights reserved © Praveen Kumar Singh.
+All rights reserved | Praveen Kumar Singh.
 
 Reuse, modification, implementation, or commercial use of this idea
 requires prior permission from the author.
