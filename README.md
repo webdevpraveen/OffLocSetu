@@ -1,6 +1,6 @@
 # OffLocSetu (Offline Location Setu)
 
-## Project Idea: **Offline (no internet & gps) Location System** ( _Concept Proposal_ )
+## **Project Idea:**  **Offline (no internet & gps) Location System**
 
 OfflocSetu is a location provider that works without internet and without GPS. It estimates approximate location using cellular network signals and is intended for safety and awareness use cases such as child and elderly care.
 
@@ -301,7 +301,9 @@ This project is about **safety**
 A mobile phone can exist in three states:
 
  State 1. GPS ON + Internet ON
+ 
  State 2. GPS OFF + Internet ON
+ 
  State 3. GPS OFF + Internet OFF
 
 Most apps only work well in **State 1**.
@@ -426,7 +428,7 @@ If one day this idea becomes a working prototype,
 it will be built on this foundation - carefully, responsibly, and transparently.
 
 ---
-## License
+### License
 
 This project is currently shared as a concept and documentation only.
 
@@ -434,3 +436,8 @@ All rights reserved © Praveen Kumar Singh.
 
 Reuse, modification, implementation, or commercial use of this idea
 requires prior permission from the author.
+
+---
+<p align="right">
+  <img src="https://komarev.com/ghpvc/?username=webdevpraveen-OffLocSetu&label=Project%20Views" />
+</p>
