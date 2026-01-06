@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfflocSetu - Frequently Asked Questions</title>
+  <meta name="description" content="Frequently asked questions about OfflocSetu, an offline-first location awareness concept that works without GPS and internet using cellular signals." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --border: #1f2933;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, #020617, #020617 40%, #020617);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    header { margin-bottom: 40px; }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+
+    header p { color: var(--muted); max-width: 720px; }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(34, 211, 238, 0.25);
+      margin-bottom: 14px;
+    }
+
+    .faq { display: grid; gap: 16px; counter-reset: faq; }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      transition: border-color 0.2s ease;
+      position: relative;
+    }
+
+    details[open] { border-color: rgba(34, 211, 238, 0.4); }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+      list-style: none;
+      padding-left: 52px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::before {
+      counter-increment: faq;
+      content: counter(faq);
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(34, 211, 238, 0.15);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .comments summary::before {
+      content: none;
+      counter-increment: none;
+    }
+
+    summary::after {
+      content: "+";
+      float: right;
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    details[open] summary::after { content: "–"; }
+
+    .answer { margin-top: 12px; color: #d1d5db; padding-left: 52px; }
+
+    .answer p { margin: 0 0 10px; }
+
+    .answer ul { margin: 8px 0 0 18px; }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">Concept FAQ</span>
+      <h1>OfflocSetu – Frequently Asked Questions</h1>
+      <p>
+        This page answers the most common questions around <strong>OfflocSetu</strong> -
+        a concept exploring how <em>approximate location awareness</em> might work
+        <strong>without internet and without GPS</strong>, using cellular network signals.
+      </p>
+    </header>
+
+    <section class="faq">
+      <details open>
+        <summary>What exactly is OfflocSetu?</summary>
+        <div class="answer">
+          <p>OfflocSetu is a conceptual exploration of approximate location awareness without using GPS or internet.</p>
+          <p>It evaluates whether cellular network metadata can be interpreted to infer coarse-grained location context.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How accurate is cell tower location in rural vs urban areas?</summary>
+        <div class="answer">
+          <p>Accuracy depends heavily on tower density and radio environment.</p>
+          <ul>
+            <li>Urban areas: ~100 to 500 meters</li>
+            <li>Semi-urban areas: ~1– 2 km</li>
+            <li>Rural areas: 3– 5+ km</li>
+          </ul>
+          <p>This provides awareness, not navigation-level precision.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is this method truly offline or partially network-dependent?</summary>
+        <div class="answer">
+          <p>This method does not use internet or GPS, but it is dependent on cellular network availability.</p>
+          <p>If the phone is not registered to any cell tower, location inference is not possible.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can this work when the phone is in airplane mode?</summary>
+        <div class="answer">
+          <p>No. Airplane mode disables cellular radios.</p>
+          <p>Without an active cellular connection, there is no tower data to read.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can this work in forests where no cell towers are present?</summary>
+        <div class="answer">
+          <p>No. Without cellular coverage, the phone has no external radio reference.</p>
+          <p>In such cases, only last known location or GPS (if enabled) can be used.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can a phone truly operate in a completely offline mode?</summary>
+        <div class="answer">
+          <p>Yes, but in a true offline state the device cannot communicate with external infrastructure.</p>
+          <p>In that state, external location estimation is fundamentally impossible.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is it possible to connect to a cell tower without internet?</summary>
+        <div class="answer">
+          <p>Yes. Cellular registration for calls and SMS does not require internet access.</p>
+          <p>This control-plane connectivity is what this concept relies on.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What are the main technical limitations of this approach?</summary>
+        <div class="answer">
+          <ul>
+            <li>Low spatial accuracy compared to GPS</li>
+            <li>High signal variability</li>
+            <li>Restricted access to telephony APIs on modern OS versions</li>
+            <li>Complete failure in zero-signal environments</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Why is this idea documented before implementation?</summary>
+        <div class="answer">
+          <p>Documenting first exposes assumptions, constraints, and edge cases early.</p>
+          <p>This reduces wasted effort during later implementation.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can this track someone in real time?</summary>
+        <div class="answer">
+          <p>No. This approach is not designed for real-time tracking.</p>
+          <p>Cellular metadata updates are event-driven and coarse, making continuous real-time tracking impractical.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Does this work if mobile data is turned off?</summary>
+        <div class="answer">
+          <p>Yes. Mobile data is not required.</p>
+          <p>As long as the device is registered on the cellular network for calls or SMS, the necessary signals still exist.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is this similar to how telecom operators locate phones?</summary>
+        <div class="answer">
+          <p>Conceptually yes, but with major differences.</p>
+          <p>Telecom operators have access to network-side data, while this idea only uses device-side information.</p>
+        </div>
+      </details>
+      
+      <details>
+        <summary>Is this safe from a privacy perspective?</summary>
+        <div class="answer">
+          <p>Any real implementation must require explicit user consent.</p>
+          <p>No background or hidden tracking is implied by this concept.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Why is this useful if the accuracy is low?</summary>
+        <div class="answer">
+          <p>Because awareness can be more valuable than precision in some scenarios.</p>
+          <p>Knowing a rough area or connectivity state is often better than having no information at all.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What kind of real-world use cases could this support?</summary>
+        <div class="answer">
+          <p>Potential use cases include safety monitoring, fallback location awareness, degraded-network scenarios, and system diagnostics.</p>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="faq comments" style="margin-top:48px;">
+      <details open>
+        <summary>Ask a question or leave a comment</summary>
+        <div class="answer">
+          <p>Have a question or edge case in mind? Leave it here.</p>
+          <form id="commentForm">
+            <textarea id="commentInput" rows="4" style="width:100%;padding:12px;border-radius:10px;border:1px solid var(--border);background:#020617;color:var(--text);" placeholder="Write your question or comment..."></textarea>
+            <button type="submit" style="margin-top:10px;padding:10px 18px;border-radius:999px;border:none;background:var(--accent);color:#020617;font-weight:600;cursor:pointer;">Submit</button>
+          </form>
+          <div id="comments" style="margin-top:20px;"></div>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <p>© 2026 OfflocSetu - Concept & documentation by Praveen Kumar Singh.</p>
+      <p>Read the full concept on GitHub: <a href="https://github.com/webdevpraveen/OffLocSetu/" target="_blank" rel="noreferrer">github.com/webdevpraveen/OffLocSetu</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('commentForm');
+    const input = document.getElementById('commentInput');
+    const commentsDiv = document.getElementById('comments');
+
+    let comments = [];
+    try {
+      const stored = localStorage.getItem('offlocsetu-comments');
+      if (stored) comments = JSON.parse(stored);
+      if (!Array.isArray(comments)) comments = [];
+    } catch (e) {
+      comments = [];
+    }
+
+    function renderComments() {
+      commentsDiv.innerHTML = '';
+      for (const text of comments) {
+        const p = document.createElement('p');
+        p.style.padding = '10px 12px';
+        p.style.border = '1px solid var(--border)';
+        p.style.borderRadius = '10px';
+        p.style.marginBottom = '8px';
+        p.textContent = text;
+        commentsDiv.appendChild(p);
+      }
+    }
+
+    renderComments();
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const value = input.value.trim();
+      if (!value) return;
+      comments.push(value);
+      localStorage.setItem('offlocsetu-comments', JSON.stringify(comments));
+      input.value = '';
+      renderComments();
+    });
+  </script>
+</body>
+</html>
