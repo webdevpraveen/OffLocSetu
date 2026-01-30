@@ -447,5 +447,5 @@ requires prior permission from the author.
 
 ---
 <p align="right">
-  <img src="https://komarev.com/ghpvc/?username=webdevpraveen-OffLocSetu&label=Project%20Views" />
+  <img src="https://komarev.com/ghpvc/?username=webdevpraveen-OffLocSetu&label=Views" />
 </p>
